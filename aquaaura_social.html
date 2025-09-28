@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaAura – Premium Bottles</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fcff;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #00c6ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    nav a {
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #7b2ff7;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('Gemini_Generated_Image_i0rgoxi0rgoxi0rg.png') center/cover no-repeat;
+      color: #fff;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      background: linear-gradient(45deg, #00c6ff, #7b2ff7);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Section */
+    section {
+      padding: 60px 10%;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      background: linear-gradient(45deg, #00c6ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Products */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .product h3 {
+      margin: 15px 0 10px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .product p {
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #7b2ff7;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* About */
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #444;
+      text-align: center;
+    }
+
+    /* Contact */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+    .socials {
+      margin: 15px 0;
+    }
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: white;
+      transition: color 0.3s;
+    }
+    .socials a:hover {
+      color: #7b2ff7;
+    }
+    .socials p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    @media(max-width:768px){
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/6f9d1a6a99.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>AquaAura</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        
+<li><a href="#contact">Contact</a></li>
+<li>
+  <a href="https://www.instagram.com/aquaaura_0/?hl=en" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+</li>
+<li>
+  <a href="https://www.facebook.com/profile.php?id=61581540232942" target="_blank">
+    <i class="fab fa-facebook"></i> Facebook
+  </a>
+</li>
+
+    <li>
+      <a href="https://www.instagram.com/aquaaura_0/?hl=en" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  
+
+<section class="hero" id="home">
+  <h1>Hydration Made Cool</h1>
+  <p>Trendy, stylish, and eco-friendly bottles designed for YOU.</p>
+  <div style="display: flex; gap: 15px; justify-content: center;">
+    <a href="https://www.instagram.com/aquaaura_0/?hl=en" target="_blank">
+      <button class="btn"><i class="fab fa-instagram"></i> Instagram</button>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61581540232942" target="_blank">
+      <button class="btn"><i class="fab fa-facebook"></i> Facebook</button>
+    </a>
+  </div>
+</section>
+
+
+
+  <!-- Shop -->
+  <section id="shop">
+    <h2>Our Bottles</h2>
+    <div class="products">
+      <div class="product">
+        <img src="remove the details u.png" alt="Bottle 1">
+        <h3>Classic Aqua</h3>
+        <p>$15</p>
+        <button class="btn">Grab Yours</button>
+      </div>
+      <div class="product">
+        <img src="Gemini_Generated_Image_i0rgoxi0rgoxi0rg.png" alt="Bottle 2">
+        <h3>Modern Aura</h3>
+        <p>$20</p>
+        <button class="btn">Grab Yours</button>
+      </div>
+      <div class="product">
+        <img src="remove the details u.png" alt="Bottle 3">
+        <h3>Elegant Flow</h3>
+        <p>$25</p>
+        <button class="btn">Grab Yours</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>AquaAura is a youth-focused lifestyle brand. We design bottles that not only look good but also inspire you to stay hydrated and healthy. With vibrant designs and sustainable materials, AquaAura makes hydration trendy.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    
+
+<div class="gallery">
+  <img src="Gemini_Generated_Image_kjb8akkjb8akkjb8.png" alt="Bottle AquaAura 1">
+  <img src="b8b0a72f-66ab-4b2a-80cd-5649c204b910.png" alt="Bottle AquaAura 2">
+  <img src="0f63f298-77bf-4244-aa3e-d1f7ab15d25e.png" alt="Bottle AquaAura 3">
+  <img src="Gemini_Generated_Image_i0rgoxi0rgoxi0rg.png" alt="Bottle AquaAura 4">
+</div>
+
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center; margin-bottom:20px;">Email: info@aquaaura.com | Phone: +91 98765 43210</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AquaAura. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://instagram.com/aquaaura_0" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61581540232942" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <p>Follow us on Instagram @aquaaura_0 and Facebook for latest updates!</p>
+    </div>
+    <p>Stay Hydrated. Stay Cool.</p>
+  </footer>
+
+</body>
+</html>
